@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<odoo>
+    <menuitem id="sales_tags_root"
+              name="Sales Tags"
+              sequence="3" />
+
+    <!--    Custom Field Tag-->
+    <record id="sales_order_inherit" model="ir.ui.view">
+        <field name="name">sales.order.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <field name="client_order_ref" position="after">
+                <field name="tag_name"/>
+            </field>
+        </field>
+    </record>
+
+
+<!--    Sales Tags Tree-->
+    <record id="sales_tags_view_tree" model="ir.ui.view">
+        <field name="name">sales.tags.view.tree</field>
+        <field name="model">sales.tags</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="tag_name"/>
+            </tree>
+        </field>
+    </record>
+
+<!--    Sales Tags Form-->
+    <record id="sales_tags_view_form" model="ir.ui.view">
+        <field name="name">sales.tags.view.form</field>
+        <field name="model">sales.tags</field>
+        <field name="arch" type="xml">
+            <form string="Sales Tags">
+                <sheet>
+                    <field name="tag_name"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+<!--    Sales Tags Action-->
+    <record id="sales_tags_menu_action" model="ir.actions.act_window">
+        <field name="name">SalesTags</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sales.tags</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="sales_tags_menu"
+              name="Sales Tags"
+              parent="sales_tags_root"
+              action="sales_tags_menu_action"
+              sequence="1"/>
+
+
+
+
+
+
+</odoo>
