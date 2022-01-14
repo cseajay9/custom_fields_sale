@@ -2,7 +2,6 @@ from odoo import models, fields
 
 
 class SalesOrderInherit(models.Model):
-    _inherit = 'sale.order'
-    _name = 'sales.order.inherit'
+    _inherit ='sale.order'
 
-    tags = fields.Char(string='Tag')
+    tag_ids = fields.Many2many('sales.tags',  string='Tags')

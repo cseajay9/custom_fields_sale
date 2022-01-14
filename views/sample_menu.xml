@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<odoo>
+
+    <record id='sample_menu_tree_view' model='ir.ui.view'>
+        <field name='name'>sample.menu.tree.view</field>
+        <field name='model'>sample.menu</field>
+        <field name='arch' type='xml'>
+            <tree string='Sample Menu'>
+                <field name='name'/>
+                <field name='description'/>
+            </tree>
+        </field>
+    </record>
+
+    <record id='sample_menu_form_view' model='ir.ui.view'>
+        <field name='name'>sample.menu.form.view</field>
+        <field name='model'>sample.menu</field>
+        <field name='arch' type='xml'>
+            <form string='Sample Menu'>
+                <sheet>
+                    <group>
+                        <field name='name'/>
+                        <field name='description'/>
+                    </group>
+                        <separator string='Tags'/>
+                        <field name='tagname_ids' widget='many2many_tags'/>
+                    <group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id='action_sample_menu' model='ir.actions.act_window'>
+        <field name='name'>Sample Menu</field>
+        <field name='type'>ir.actions.act_window</field>
+        <field name='res_model'>sample.menu</field>
+        <field name='view_mode'>tree,form,kanban</field>
+        <field name='help' type='html'>
+            <p class='o_view_nocontent_smiling_face'>
+                Create one
+            </p>
+        </field>
+    </record>
+    
+
+    <menuitem id='sample_menu' name='Sample Menu' parent='sales_tags_root' action='action_sample_menu' sequence='2'/>
+
+
+
+
+</odoo>

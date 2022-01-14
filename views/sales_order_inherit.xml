@@ -1,16 +1,14 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version='1.0' encoding='utf-8' ?>
 <odoo>
-<!--    Custom Field Tag-->
-    <record id="sales_order_inherit" model="ir.ui.view">
-        <field name="name">sales.order.inherit</field>
-        <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_order_form"/>
-        <field name="arch" type="xml">
-            <field name="client_order_ref" position="after">
-                <field name="tags"/>
+    <record id='sales_order_inherit' model='ir.ui.view'>
+        <field name='name'>sales.order.inherit</field>
+        <field name='model'>sale.order</field>
+        <field name='inherit_id' ref='sale.view_order_form'/>
+        <field name='arch' type='xml'>
+            <field name='client_order_ref' position='after'>
+                <field name='tag_ids' widget='many2many_tags'/>
             </field>
         </field>
-
     </record>
 
 

@@ -3,4 +3,5 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_sales_tags_user,sales_tags,sales_tags.model_sales_tags,account.group_account_user,1,0,0,0
 access_sales_tags_manager,sales_tags,sales_tags.model_sales_tags,account.group_account_manager,1,1,1,1
 
-
+access_sample_menu_user,sample_menu,sales_tags.model_sample_menu,account.group_account_user,1,0,0,0
+access_sample_menu_manager,sample_menu,sales_tags.model_sample_menu,account.group_account_manager,1,1,1,1

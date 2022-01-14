@@ -1,17 +1,17 @@
 {
     'name': 'Sales Tags',
+    'version': '13.0.0.1',
     'author': 'Ajay',
-    'version': '13.0.1',
-
-    #any module necessary for this one to work correctly
-    'depends': ['account', 'base', 'sale'],
-
-    #always loaded
-    'data': [
+    'depends': ['base', 'account', 'sale'],
+    'data': [ 
         'security/ir.model.access.csv',
-        'views/sales_tags.xml'
+        'views/sales_tags.xml',
+        'views/sample_menu.xml',
+        'views/sales_order_inherit.xml'     
     ],
-    'sequence': '1',
+    'sequence': '4',
     'application': True,
+
+
 
 }
